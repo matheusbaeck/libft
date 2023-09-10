@@ -6,7 +6,7 @@
 #    By: math42 <math42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 10:37:38 by mamagalh@st       #+#    #+#              #
-#    Updated: 2023/04/08 13:06:23 by math42           ###   ########.fr        #
+#    Updated: 2023/07/05 23:51:59 by math42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,11 @@ NAME_BONUS = libft_bonus.a
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror -c -g -o
+FLAGS = -Wall -Wextra -Werror -c -o
 
 LIB_CC = ar rcs
 
-LIB_PATH = ../../\#lib/
-
-HEADER_PATH = ../../\#header/
-
-SRC = ft_islower.c \/Users/mamagalh/
+SRC = ft_islower.c \
 	ft_isupper.c \
 	ft_isalpha.c \
 	ft_isdigit.c \
@@ -80,21 +76,18 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER_NAME)
+$(NAME): $(OBJ)
 	$(LIB_CC) $(NAME) $(OBJ) $(HEADER_NAME)
-	ln -f $(NAME) $(LIB_PATH)$(NAME)
-	ln -f $(HEADER_NAME) $(HEADER_PATH)$(HEADER_NAME)
-
-
+	make clean
 
 %.o:%.c
 	$(CC) $(FLAGS) $@ $<
 
 clean:
-	rm -rf *.o *.dSYM *.out *.a
+	rm -rf *.o *.dSYM *.out
 
 fclean: clean
-	rm -f $(NAME) $(NAME_BONUS) $(LIB_PATH)$(NAME) $(HEADER_PATH)$(HEADER_NAME)
+	rm -f $(NAME) $(NAME_BONUS) *.a
 
 re: fclean all
 
@@ -104,6 +97,3 @@ bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJ) $(BONUS_OBJ) $(HEADER_NAME)
 	$(LIB_CC) $(NAME_BONUS) $(OBJ) $(BONUS_OBJ)
-	ln -f $(NAME:.a=_bonus.a) $(NAME)
-	ln -f $(NAME:.a=_bonus.a) $(LIB_PATH)$(NAME)
-	ln -f $(HEADER_NAME) $(HEADER_PATH)$(HEADER_NAME)
