@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamagalh@student.42madrid.com <mamagalh    +#+  +:+       +#+        */
+/*   By: math42 <math42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 19:04:51 by mamagalh@st       #+#    #+#             */
-/*   Updated: 2023/03/22 11:32:48 by mamagalh@st      ###   ########.fr       */
+/*   Created: 2023/09/10 13:38:37 by math42            #+#    #+#             */
+/*   Updated: 2023/09/10 13:38:42 by math42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ t_list	*ft_lstnew(void *content)
 	nodo->next = 0;
 	return (nodo);
 }
- 
