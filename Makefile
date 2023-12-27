@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: math42 <math42@student.42.fr>              +#+  +:+       +#+         #
+#    By: baeck <baeck@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 10:37:38 by mamagalh@st       #+#    #+#              #
-#    Updated: 2023/07/05 23:51:59 by math42           ###   ########.fr        #
+#    Updated: 2023/12/27 14:30:42 by baeck            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(LIB_CC) $(NAME) $(OBJ) $(HEADER_NAME)
-	make clean
 
 %.o:%.c
 	$(CC) $(FLAGS) $@ $<
